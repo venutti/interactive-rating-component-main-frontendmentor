@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+:root {
+    --orange: rgb(251, 116, 19);
+    --white: rgb(255, 255, 255);
+    --light-grey: rgb(149, 158, 172);
+    --light-grey-opaque: rgba(149, 158, 172, .1);
+    --medium-grey: rgb(124, 135, 152);
+    --dark-blue: rgb(37, 45, 55);
+    --very-dark-blue: rgb(18, 20, 23);
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+html , body{
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background-color: var(--very-dark-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.hide{
+    display: none;
+}
+
+.rating-card {
+    font-size: 1rem;
+    font-weight: 400;
+    background-color: var(--dark-blue);
+    color: var(--light-grey);
+    font-family: 'Overpass', sans-serif;
+    width: clamp(30ch, 40%, 50ch);
+    padding: 1.5rem;
+    border-radius: 15px;
+}
+/*STAR IMG*/
+.rating-card .img-star {
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--light-grey-opaque);
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+}
+
+/*HEADING*/
+.rating-card > h2 {
+    color: var(--white);
+    font-weight: 700;
+    margin: 1rem 0;
+}
+
+/*PARAGRAPH*/
+.rating-card > p {
+    margin: 1rem 0;
+    line-height: 1.5;
+}
+/*STAR POINTS*/
+/* https://moderncss.dev/pure-css-custom-styled-radio-buttons/ */
+.stars-input {
+    margin: 1rem auto;
+    max-width: 300px;
+    display: flex;
+    justify-content: space-between;
+}
+.star-point {
+    position: relative;
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+}
+
+.star-point input {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    /*to give styles*/
+    -webkit-appearance: none;
+    appearance: none;
+    /*not removed via appearance*/
+    margin: 0;
+    opacity: .1;
+    background-color: var(--medium-grey);
+    border-radius: 50%;
+}
+
+.star-point input:hover,
+.star-point input:checked,
+.star-point input:focus {
+    outline: none;
+    opacity: 1;
+}
+
+.star-point input:checked {
+    background-color: var(--orange);
+}
+
+.star-point input:checked + span,
+.star-point input:hover + span,
+.star-point input:focus + span {
+    color: var(--white);
+}
+
+.star-point span {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+}
+
+/*SUBMIT BUTTON*/
+.rating-card .submit-button {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 2rem;
+    background-color: var(--orange);
+    font-family: inherit;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 3px;
+    cursor:pointer;
+}
+
+.rating-card .submit-button:hover {
+    background-color: var(--white);
+    color: var(--orange);
+}
+
+#back-rating {
+    text-align: center;
+}
+
+#back-rating .rate-msj {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    padding: .5rem 2rem;
+    border-radius: 2rem;
+    background-color: var(--light-grey-opaque);
+    color: var(--orange);
+}
